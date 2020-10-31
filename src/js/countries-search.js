@@ -13,19 +13,20 @@ refs.form.addEventListener('input', debounce(onSearch, 500));
 
 function onSearch(e) {
   clearCardContainer();
-  const form = e.target;
-  const searchValue = form.value;
+
+  const searchValue = e.target.value;
+
+  if (searchValue === '') return;
+
   API.fetchCountries(searchValue)
     .then(response => {
       if (response.length > 10) {
         onFetchManyMatches();
       } else if (response.length > 1) {
         renderCountries(response, countriesTpl);
-        console.log(response);
       } else if (response.length === 1) {
         renderCountryCard(response, countryCardTpl);
-        console.log(response);
-      } else if (response.status === 404) {
+      } else {
         onFetchNoMatches();
       }
     })
@@ -47,23 +48,26 @@ function clearCardContainer() {
   refs.cardContainer.innerHTML = '';
 }
 
-function onFetchError() {
-  error({
-    text: 'Please enter query!',
-    delay: 2000,
-  });
-}
-
 function onFetchManyMatches() {
   notice({
-    text: 'Too many matches found. Please enter a more specific query!',
-    delay: 2000,
+    title: 'Too many matches!',
+    text: 'Too many matches found. Please enter a more specific query.',
+    delay: 2500,
   });
 }
 
 function onFetchNoMatches() {
   error({
-    text: 'No matches found. Please enter another query!',
-    delay: 2000,
+    title: 'No matches!',
+    text: 'No matches found. Please enter another query.',
+    delay: 2500,
+  });
+}
+
+function onFetchError() {
+  error({
+    title: 'Error!',
+    text: 'Please enter a query.',
+    delay: 2500,
   });
 }

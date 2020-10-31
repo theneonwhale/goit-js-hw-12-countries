@@ -1,16 +1,15 @@
 <div class="card">
-  <div>
-    <h2>{{name}}</h2>
-    <div>Capital: {{capital}}</div>
-    <div>Population: {{population}}</div>
-    <div>Languages:</div>
-    <ul>
+  <div class="card-info">
+    <h2 class="card-title">{{name}}</h2>
+    <div class="card-text"><span class="card-text-title">Capital:</span> {{capital}}</div>
+    <div class="card-text"><span class="card-text-title">Population:</span> {{population}}</div>
+    <div class="card-text"><span class="card-text-title">Languages:</span></div>
+    <ul class="card-list">
       {{#each languages}}
-      <li class="list-group-item">{{name}}</li>
+      <li class="card-list-item">{{name}}</li>
       {{/each}}
     </ul>
+    <div class="card-text"><span class="card-text-title">Region:</span> {{region}}</div>
   </div>
-  <div class="card-img-top">
-    <img src="{{flag}}" alt="{{name}}" width="300">
-  </div>
+  <img src="{{flag}}" alt="{{name}}" width="300" class="flag-img">
 </div>

@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-    <title>Homework 12 countries</title>
+    <title>Homework 12 Countries</title>
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/modern-normalize/1.0.0/modern-normalize.min.css"
@@ -13,11 +13,15 @@
     />
   </head>
   <body>
+    <h1 class="title">Search your country!</h1>
     <div class="form-inline">
-      <form class="form-inline search-form js-search-form">
-        <div class="form-group">
-          <input type="text" class="form-control" name="query" />
-        </div>
+      <form>
+        <input
+          type="search"
+          class="form-input"
+          name="query"
+          placeholder="Enter a country name here..."
+        />
       </form>
       <div class="js-card-container"></div>
     </div>

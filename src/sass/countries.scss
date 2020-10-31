@@ -1,28 +1,102 @@
-form-inline {
+@import url('https://fonts.googleapis.com/css2?family=Mukta:wght@700&display=swap');
+
+body {
+  background: radial-gradient(
+      circle,
+      rgba(63, 94, 251, 0.65) 0%,
+      rgba(252, 70, 107, 0.25) 100%
+    ),
+    url(https://images.unsplash.com/photo-1524661135-423995f22d0b?ixlib=rb-1.2.1&auto=format&fit=crop&w=1353&q=80);
+  background-size: cover;
   display: flex;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
 }
-.search-form {
+
+ul {
+  list-style-type: circle;
+  list-style-position: inside;
+  padding: 0;
+}
+
+.title {
+  margin-top: 20px;
+  margin-bottom: 0;
+  font-size: 40px;
+  color: #ffffff;
+  text-align: center;
+  text-shadow: 0px 0px 20px rgba(255, 255, 255, 0.64);
+  font-family: 'Mukta', sans-serif;
+}
+
+.form-inline {
   display: flex;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
+  font-family: 'Mukta', sans-serif;
 }
+
+.form-input {
+  width: 300px;
+  height: 35px;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  padding: 5px;
+  border-radius: 10px;
+  border: transparent;
+  font-size: 20px;
+}
+
 .card {
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 24px;
-  font-weight: bold;
-  max-width: 500px;
-  text-align: left;
+  font-size: 19px;
+  max-width: 560px;
   margin: 0 auto;
+  padding: 15px;
+  border-radius: 10px;
+  background-color: rgba(0, 0, 0, 0.3);
+  color: #ffffff;
+  font-family: 'Mukta', sans-serif;
 }
 
-.form-control {
-  font-size: 28px;
-  line-height: 1.2;
-  text-align: center;
-  margin: 40px;
-  width: 538px;
+.card-info {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  justify-content: center;
+}
+.card-title {
+  margin: 0;
+  margin-bottom: 5px;
+  font-size: 30px;
+  color: rgb(49, 231, 255);
+  text-shadow: 0px 0px 13px rgba(49, 231, 255, 0.64);
+}
+
+.card-text {
+  margin-top: 7px;
+}
+
+.card-text-title {
+  color: rgb(42, 203, 224);
+}
+
+.card-list {
+  margin: 0;
+  margin-top: 7px;
+  padding: 0;
+}
+
+.card-list-item {
+  padding-left: 10px;
+}
+
+.flag-img {
+  margin-left: 15px;
+  // width: 100%;
+  height: 100%;
 }
