@@ -23,9 +23,9 @@ function onSearch(e) {
       if (response.length > 10) {
         onFetchManyMatches();
       } else if (response.length > 1) {
-        renderCountries(response, countriesTpl);
+        renderCard(response, countriesTpl);
       } else if (response.length === 1) {
-        renderCountryCard(response, countryCardTpl);
+        renderCard(response[0], countryCardTpl);
       } else {
         onFetchNoMatches();
       }
@@ -34,13 +34,8 @@ function onSearch(e) {
     .catch(onFetchError);
 }
 
-function renderCountryCard(countries, template) {
-  const markup = countries.map(country => template(country)).join('');
-  refs.cardContainer.innerHTML = markup;
-}
-
-function renderCountries(countries) {
-  const markup = countriesTpl(countries);
+function renderCard(countries, template) {
+  const markup = template(countries);
   refs.cardContainer.innerHTML = markup;
 }
 
